@@ -1,4 +1,4 @@
-docker compose downpipeline {
+pipeline {
     agent any
     stages {
         stage('build') {
