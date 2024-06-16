@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        NETLIFT_SITE_ID='9f950403-812f-483b-8270-25f4b1070752'
+        NETLIFY_SITE_ID='9f950403-812f-483b-8270-25f4b1070752'
     }
 
     stages {
@@ -86,6 +86,7 @@ pipeline {
                 sh '''
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
+                    echo "deplyed the file $NETLIFY_SITE_ID"
                 '''
             }
         }
