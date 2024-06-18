@@ -92,7 +92,14 @@ pipeline {
                 '''
             }
         }
-
+        stage ('Approval') {
+            steps {
+                echo 'waiting for the approval'
+                timeout(1) {
+                input message: 'Please help to provide your input', ok: 'Please approve'
+                }            
+            }
+        }
         stage('Deploy') {
             agent {
                 docker {
